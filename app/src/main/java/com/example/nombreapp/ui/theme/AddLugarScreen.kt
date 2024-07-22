@@ -29,7 +29,6 @@ fun AddLugarScreen(viewModel: LugarViewModel, onNavigateBack: () -> Unit) {
     Column(modifier = Modifier.padding(16.dp)) {
         TextField(value = nombre, onValueChange = { nombre = it }, label = { Text("Nombre") })
         TextField(value = imagenUrl, onValueChange = { imagenUrl = it }, label = { Text("URL Imagen") })
-        // Agregar campos para latitud, longitud, orden, costoAlojamiento, costoTraslados y comentarios
 
         Button(onClick = {
             if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
@@ -40,7 +39,6 @@ fun AddLugarScreen(viewModel: LugarViewModel, onNavigateBack: () -> Unit) {
                     REQUEST_IMAGE_CAPTURE
                 )
             } else {
-                // Guardar lugar en la base de datos
                 viewModel.insert(Lugar(
                     nombre = nombre,
                     imagenUrl = imagenUrl,
