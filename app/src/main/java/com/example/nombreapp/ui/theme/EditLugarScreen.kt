@@ -22,7 +22,6 @@ fun EditLugarScreen(lugar: Lugar, viewModel: LugarViewModel, onNavigateBack: () 
     Column(modifier = Modifier.padding(16.dp)) {
         TextField(value = nombre, onValueChange = { nombre = it }, label = { Text("Nombre") })
         TextField(value = imagenUrl, onValueChange = { imagenUrl = it }, label = { Text("URL Imagen") })
-        // Agregar campos para latitud, longitud, orden, costoAlojamiento, costoTraslados y comentarios
 
         Button(onClick = {
             viewModel.update(lugar.copy(
